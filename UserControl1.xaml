@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="Product.ProductListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Product">
+
+
+
+    <Grid>
+        <ListView Margin="40,0,40,10" Background="White" ItemsSource="{Binding Products}">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Vertical"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Height="100" Width="100" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="{Binding Image, Mode=OneWay}" IsEnabled="False"/>
+                            <StackPanel Orientation="Vertical">
+                                <TextBox Height="25" Width="110" Text="{Binding Name}" IsEnabled="False"/>
+                                <TextBox Height="25" Width="110" Text="{Binding Description}" IsEnabled="False"/>
+                                <TextBox Height="25" Width="110" Text="{Binding Manufacturer}" IsEnabled="False"/>
+                                <TextBox Height="25" Width="110" Text="{Binding Price}" IsEnabled="False"/>
+                            </StackPanel>
+                            <TextBox Height="100" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Text="{Binding StockQuantity}" IsEnabled="False"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</UserControl>
